@@ -1,26 +1,52 @@
-#  Как работать с репозиторием финального задания
+# Kittygram
 
-## Что нужно сделать
+Kittygram is a full-stack web application for sharing information about cats, their achievements, and photos.
 
-Настроить запуск проекта Kittygram в контейнерах и CI/CD с помощью GitHub Actions
+The project demonstrates containerized deployment, CI/CD automation, backend API development, and production configuration with Nginx and Docker Compose.
 
-## Как проверить работу с помощью автотестов
+## Features
 
-В корне репозитория создайте файл tests.yml со следующим содержимым:
-```yaml
-repo_owner: ваш_логин_на_гитхабе
-kittygram_domain: полная ссылка (https://доменное_имя) на ваш проект Kittygram
-taski_domain: полная ссылка (https://доменное_имя) на ваш проект Taski
-dockerhub_username: ваш_логин_на_докерхабе
-```
+- User registration and authentication
+- Create, edit, and delete cat profiles
+- Upload cat photos
+- Add achievements to cat profiles
+- REST API for frontend-backend communication
+- Containerized application environment
+- Automated testing and deployment with GitHub Actions
+- Production deployment with Nginx and Docker Compose
 
-Скопируйте содержимое файла `.github/workflows/main.yml` в файл `kittygram_workflow.yml` в корневой директории проекта.
+## Tech Stack
 
-Для локального запуска тестов создайте виртуальное окружение, установите в него зависимости из backend/requirements.txt и запустите в корневой директории проекта `pytest`.
+### Backend
+- Python
+- Django
+- Django REST Framework
+- Gunicorn
 
-## Чек-лист для проверки перед отправкой задания
+### Frontend
+- JavaScript
+- React
 
-- Проект Taski доступен по доменному имени, указанному в `tests.yml`.
-- Проект Kittygram доступен по доменному имени, указанному в `tests.yml`.
-- Пуш в ветку main запускает тестирование и деплой Kittygram, а после успешного деплоя вам приходит сообщение в телеграм.
-- В корне проекта есть файл `kittygram_workflow.yml`.
+### Infrastructure
+- Docker
+- Docker Compose
+- Nginx
+- GitHub Actions
+- CI/CD
+
+### Testing
+- Pytest
+
+## Project Structure
+
+```text
+kittygram_final/
+├── backend/        # Django backend and REST API
+├── frontend/       # React frontend
+├── nginx/          # Nginx configuration
+├── tests/          # Automated tests
+├── .github/
+│   └── workflows/  # CI/CD workflows
+├── docker-compose.yml
+├── docker-compose.production.yml
+└── .env.example
